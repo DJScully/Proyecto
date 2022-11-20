@@ -1,0 +1,44 @@
+@import "bootstrap.css";
+/*Página Web*/
+:root {
+    box-sizing: border-box;
+  }
+  
+  * {
+    box-sizing: inherit;
+    margin: 0px;
+    padding: 0px;
+    outline: none !important;
+  }
+
+  html,body{
+        height: 100%;
+        background-color: #cdb08a !important;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+/*Botones*/
+  .btn-primary{
+    background-color: brown;
+    border-color: transparent;
+  }
+
+  .btn-primary:hover{
+    background-color: rgb(127, 35, 35);
+  }
+
+  .btn:last-child{
+    margin-left: 20px;
+  }
+  
+  /*Tabla*/
+
+
+   .table{
+    border: 1 px;
+    border-color: #b07b35;
+   }
+    
+  
+
