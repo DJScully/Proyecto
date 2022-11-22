@@ -18,14 +18,17 @@
         margin-right: 10px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
+  
 /*Botones*/
   .btn-primary{
     background-color: brown;
-    border-color: transparent;
+    border-color: transparent !important;
+    margin-bottom: 10px;
   }
 
-  .btn-primary:hover{
-    background-color: rgb(127, 35, 35);
+  .btn-primary:hover, .btn-primary:target {
+    background-color: #7f2323 !important;
+    
   }
 
   .btn:last-child{
@@ -34,11 +37,24 @@
   
   /*Tabla*/
 
-
    .table{
     border: 1 px;
     border-color: #b07b35;
    }
-    
-  
+
+   /*Formularios*/
+
+   #images > div {
+    display: flex;
+    justify-content: space-evenly;
+   }
+
+   #images_imagen, #images_Titulo{
+    margin-left: 20px;
+    width: 60%;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-top: 3px;
+   }
 
