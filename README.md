@@ -20,4 +20,29 @@ Los elementos necesarios a instalar serán
 
 ## Pasos a seguir para la elaboración del proyecto
 
-Tras la creación de la carpeta, tenemos que abrir el panel de control de XAMPP, el cual nos permitirá activar la Base de Datos.
+Tras la creación de la carpeta, tenemos que abrir el panel de control de XAMPP, el cual nos permitirá activar la Base de Datos. Luego, modificamos el fichero ".env", para poder seleccionar el tipo de base de datos que estemos usando, el usuario y contraseña, para poder conectar el proyecto a la base de datos, de tal manera que quede así.
+
+> DATABASE_URL="mysql://root:@127.0.0.1:3306/Images?serverVersion=10.4.19-MariaDBcharset=utf8mb4"
+
+Una vez hecho esto, con el comando "symfony server:start", iniciamos el servidor en el que funcionará el proyecto, el cual será visible en el enlace "localhost:8000"
+
+## Creación de los controladores
+
+Para crear los controladores, debemos situarnos con el panel de comandos en la carpeta del proyecto y ejecutar el comando
+
+> php bin/console make:controller NombreController
+
+También existe un comando para genear un CRUD completo a partir de una entidad de Doctrine:
+
+> php bin/console make:crud Producto
+
+El framework symfony no incluye ningún componente para trabajar con bases de datos. Sin embargo proporciona integración con una librería llamada Doctrine
+
+Para utilizar Doctrine hay que inatalarlo, junto con el bundle MakerBundle, que tiene las utilidades para generar código:
+
+> composer require doctrine
+> composer require maker --dev
+
+Podemos crear la base de datos a mano, o utilizar la consola de symfony:
+
+> bin/console doctrine:database:create
