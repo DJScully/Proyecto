@@ -95,6 +95,8 @@ Las variables de tipo simple se acceden sin más.
 
 Para acceder a atributos de objetos, elementos de arrays, etc, se utiliza el operador punto (.)
 
+```
 {{ fondo.titulo }}
+```
 
 Tras crear el crud, en la carpeta templates, se no habrá generado una carpeta con el  nombre de nuestra entidad, y podremos modificar la apariencia de la aplicación a placer, usando un fichero CSS, el cual generaremos dentro de la carpeta public/CSS.
