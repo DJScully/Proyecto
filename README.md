@@ -8,6 +8,7 @@ Los elementos necesarios a instalar serán
 - XAMPP
 - Composer
 - Symfony
+- Bootstrap
 
 ## Pasos a seguir para la instalación
 
@@ -32,13 +33,9 @@ Para crear los controladores, debemos situarnos con el panel de comandos en la c
 
 > php bin/console make:controller NombreController
 
-También existe un comando para genear un CRUD completo a partir de una entidad de Doctrine:
-
-> php bin/console make:crud Producto
-
 El framework symfony no incluye ningún componente para trabajar con bases de datos. Sin embargo proporciona integración con una librería llamada Doctrine
 
-Para utilizar Doctrine hay que inatalarlo, junto con el bundle MakerBundle, que tiene las utilidades para generar código:
+Para utilizar Doctrine hay que insatalarlo, junto con el bundle MakerBundle, que tiene las utilidades para generar código:
 
 > composer require doctrine
 > composer require maker --dev
@@ -46,3 +43,58 @@ Para utilizar Doctrine hay que inatalarlo, junto con el bundle MakerBundle, que 
 Podemos crear la base de datos a mano, o utilizar la consola de symfony:
 
 > bin/console doctrine:database:create
+
+Podemos crear a mano las entidades, o utilizar la consola de symfony. Una entidad no es más que una clase decorada con decoradores de Doctrine.
+
+> bin/console make:entity
+
+Las entidades se guardan generalmente en el directorio src/Entity.
+
+Tras crear los controladores y la base de datos, existe un comando para genear un CRUD completo a partir de una entidad de Doctrine:
+
+> php bin/console make:crud Producto
+
+## Modificación de la aplicación
+
+Twig es un motor de plantillas para PHP.
+
+Para activar el sistema de plantillas twig, si no lo tenemos instalado, hay que instalarlo.
+
+> composer require twig
+
+## Delimitadores
+
+Su sintaxis incluye 3 delimitadores:
+
+- Cometarios: {# ... #}
+
+```twig
+{# Esto es un comentario #}
+```
+
+- Para mostrar contenido (echo): {{ ... }}
+
+```twig
+<td>{{ fondo.editorial }}</td>
+```
+
+- Para ejecutar lógica: {% ... %}
+
+```twig
+{% for fondo in fondos %}
+  ...
+{% endfor %}
+```
+
+```twig
+{% if autor.tipo == 'PERSONA' %}
+  ...
+{% endif %}
+```
+Las variables de tipo simple se acceden sin más.
+
+Para acceder a atributos de objetos, elementos de arrays, etc, se utiliza el operador punto (.)
+
+{{ fondo.titulo }}
+
+Tras crear el crud, en la carpeta templates, se no habrá generado una carpeta con el  nombre de nuestra entidad, y podremos modificar la apariencia de la aplicación a placer, usando un fichero CSS, el cual generaremos dentro de la carpeta public/CSS.
